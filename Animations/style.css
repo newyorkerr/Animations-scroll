@@ -1,0 +1,233 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+body {
+  font-family: Montserrat, Helvetica, sans-serif;
+  background: #111;
+}
+nav {
+  z-index: 1;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  position: absolute;
+
+}
+
+nav a {
+  padding: 10px 30px;
+  color: aliceblue;
+  font-size: clamp(14px);
+
+}
+img{
+  width: 20px;
+  margin: 10px;
+}
+
+.hero {
+  background: url(ressources/backgroud\ bitcoin-modified.png);
+  text-align: center;
+  position: relative;
+  padding-top:150px;
+  height: 100vh;
+  min-height: 700px;
+  }
+
+h1 {
+  color: white;
+  display: inline-block;
+  font-size: 100px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #999, #fff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  position:relative;
+}
+
+/* trait pour le titre*/
+h1::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 80%;
+  width: 3px;
+  background: white;
+  top: 0;
+  right: -10px;
+
+  animation: carret 1s infinite;
+}
+@keyframes carret {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.subtitle{
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.466);
+  transition: opacity 0.8s ease-out;
+  opacity: 0;
+} 
+.subtitle.active {
+  opacity: 1;
+  }
+
+.hero-push-link {
+  border: 1px solid #ffff;
+  border-radius: 50%;
+  align-items: center;
+  height: 40px;
+  justify-content: center;
+  margin: 40px auto 0;
+  width:50px;
+  height: 50px;
+  display:flex;
+  bottom: 20px;
+  position:absolute;
+  left: 50%;
+
+}
+main.container {
+  
+  color: #f1f1f1;
+  padding: 0 clamp(10px, 12vw, 120px);
+  border-right: 1px solid white ;
+  border-left: 1px solid white;
+  margin:0 auto;
+  max-width: 1200px;
+  overflow-x: hidden;
+
+}
+main section {
+  padding: 20px ;
+}
+
+h2 {
+  
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200px;
+  
+}
+
+.section-subtitle-discover-subtitle {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 50px;
+}
+
+.discover-content {
+display: flex;
+justify-content: center;
+}
+
+.text-discover-content {
+  width: 50%;
+}
+.text-discover-content h3{
+  m
+
+}
+
+.text-discover-content p {
+padding-right: 70px;
+}
+
+.discover-link{
+  color: white;
+  display: flex;
+  border: 1px solid white;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: 30px;
+  max-width: 150px;
+  justify-content: space-between;
+  height: 30px;
+ 
+}
+.discover-link img{
+  height: 20px;
+  
+}
+
+
+.discover-main-img {
+  width: 50%;
+}
+
+.side-apparition-container {
+display: flex;
+max-height: 200px;
+margin: 100px 0px ;
+}
+/*animation*/ 
+.side-apparition-container {
+  transform: translateX(30px) skew(20deg);
+  opacity: 0;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+.side-apparition-container.active {
+  transform: translateX(0px) skew(0deg);
+  opacity: 1;
+}
+
+
+.section-subtitle{
+  text-align: center;
+}
+.side-slide-content{
+  width: 30%;
+}
+.side-apparition-container img {
+  width: 60%;
+  max-width: 450px;
+}
+
+.side-apparition-container p{
+  font-size: 14px;
+  padding: 10px 30px;
+
+}
+
+.side-apparition-container h3{
+padding-left: 30px;
+}
+
+/* animation scroll */
+
+h2.active,
+.section-subtitle.active,
+.text-discover-content > *.active,
+.discover-main-img.active  {
+  opacity: 1;
+  transform: translateY(0);
+
+}
+
+h2,
+.section-subtitle,
+.text-discover-content > *,
+.discover-main-img  {
+  opacity: 0;
+  transform: translateY(-200px);  /* for aaparition pixel scrolling*/
+  transition: 
+  opacity 0.5s 0.3s ease-out,
+  transform 0.5s 0.3s ease-out;
+}
